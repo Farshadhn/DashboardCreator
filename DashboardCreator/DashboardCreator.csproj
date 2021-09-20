@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <RootNamespace>DashboardCreator</RootNamespace>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="BackEnd\**" />
+    <Compile Remove="FrontEnd\**" />
+    <EmbeddedResource Remove="BackEnd\**" />
+    <EmbeddedResource Remove="FrontEnd\**" />
+    <None Remove="BackEnd\**" />
+    <None Remove="FrontEnd\**" />
+    <Page Remove="BackEnd\**" />
+    <Page Remove="FrontEnd\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Phases\Interface\InterfaceTemplate.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Lookif.Layers.Core" Version="1.0.13" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,83 @@
+﻿<Window x:Class="DashboardCreator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DashboardCreator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"></RowDefinition>
+            <RowDefinition Height="0.3*"></RowDefinition>
+            <RowDefinition Height="0.3*"></RowDefinition>
+            <RowDefinition Height="0.3*"></RowDefinition>
+            <RowDefinition Height="0.3*"></RowDefinition>
+            <RowDefinition Height="0.3*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+        <Grid Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Name="BrowseApiBtn" Click="BrowseBtn_Click" Content="Set  Api Address"/>
+            <TextBlock x:Name="BrowseApiTB"  Text="{Binding Path=apiAdd}"/>
+
+        </Grid>
+        <Grid Grid.ColumnSpan="2" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Name="BrowseUiBtn" Click="BrowseBtn_Click" Content="Set  UI Address"/>
+            <TextBlock  Name="BrowseUiTB"   Text="{Binding Path=uiAdd}"/> 
+
+        </Grid>
+        <Grid Grid.ColumnSpan="2" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Name="BrowseModelBtn" Click="BrowseFileBtn_Click" Content="Set  Model Address"/>
+            <TextBlock  Name="BrowseModelTB"  Text="{Binding Path=ModelAdd}"/>
+
+        </Grid>
+        <Grid Grid.ColumnSpan="2" Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Name="BrowseShareBtn" Click="BrowseBtn_Click" Content="Set  Share Address"/>
+            <TextBlock  Name="BrowseShareTB"  Text="{Binding Path=ShareAdd}"/>
+
+        </Grid>
+        <Grid Grid.ColumnSpan="2" Grid.Row="4">
+
+            <Button Grid.Column="1" Name="CheckFillBtn"  Click="CheckFillBtn_Click" Content="Fill it!!"/>
+
+
+        </Grid>
+        <Grid Grid.ColumnSpan="2" Grid.Row="5">
+            <ComboBox 
+                DisplayMemberPath="ClassName"
+                Name="FindModelsCB" ItemsSource="{Binding Path=Models}" SelectedValue="{Binding selectedModel, Mode=TwoWay}" />
+
+        </Grid>
+        <Grid Grid.ColumnSpan="2" Grid.Row="6">
+
+            <Button Grid.Column="1" Name="GoBtn"  Click="GoBtn_Click" Content="Burn It!!"/>
+
+
+        </Grid>
+    </Grid>
+</Window>
